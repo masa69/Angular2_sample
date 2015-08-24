@@ -1,0 +1,27 @@
+{
+  "name": "Angular2_sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "angular2": "^2.0.0-alpha.35",
+    "babel": "^5.8.21",
+    "systemjs": "^0.18.14",
+    "traceur": "0.0.91",
+    "typescript": "^1.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/masa69/Angular2_sample.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/masa69/Angular2_sample/issues"
+  },
+  "homepage": "https://github.com/masa69/Angular2_sample"
+}
