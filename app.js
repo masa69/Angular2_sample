@@ -14,14 +14,14 @@ var angular2_1 = require('angular2/angular2');
 // Annotation section
 var MyAppComponent = (function () {
     function MyAppComponent() {
-        this.name = 'masa69';
+        this.title = 'masa69';
     }
     MyAppComponent = __decorate([
         angular2_1.Component({
             selector: 'my-app'
         }),
         angular2_1.View({
-            template: '<h1>Hello {{ name }}</h1>'
+            templateUrl: 'templates/app.html'
         }), 
         __metadata('design:paramtypes', [])
     ], MyAppComponent);
