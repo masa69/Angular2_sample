@@ -20,21 +20,29 @@ var Messages = (function () {
     };
     return Messages;
 })();
+var SampleLists = (function () {
+    function SampleLists() {
+        this.item = ['one', 'two', 'three', 'four', 'five'];
+    }
+    return SampleLists;
+})();
 // Annotation section
 var MyAppComponent = (function () {
-    function MyAppComponent(message) {
+    function MyAppComponent(message, sampleLists) {
         this.title = 'masa69';
         this.mes = message.get();
+        this.lists = sampleLists.item;
     }
     MyAppComponent = __decorate([
         angular2_1.Component({
             selector: 'my-app'
         }),
         angular2_1.View({
-            template: "\n\t\t<h1>{{ title }}</h1>\n\t\t<p>{{ mes }}</p>\n\t"
+            template: "\n\t\t<h1>{{ title }}</h1>\n\t\t<p>{{ mes }}</p>\n\t\t<ul>\n\t\t\t<li *ng-for=\"#list of lists\">{{ list }}</li>\n\t\t</ul>\n\t",
+            directives: [angular2_1.NgFor]
         }), 
-        __metadata('design:paramtypes', [Messages])
+        __metadata('design:paramtypes', [Messages, SampleLists])
     ], MyAppComponent);
     return MyAppComponent;
 })();
-angular2_1.bootstrap(MyAppComponent, [Messages]);
+angular2_1.bootstrap(MyAppComponent, [Messages, SampleLists]);
