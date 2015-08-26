@@ -22,7 +22,24 @@ var Messages = (function () {
 })();
 var SampleLists = (function () {
     function SampleLists() {
-        this.item = ['one', 'two', 'three', 'four', 'five'];
+        this.item = ['GIN', 'Whiskey', 'Beer', 'Sake', 'Vodka'];
+        this.item2 = [
+            {
+                id: '1',
+                name: 'Dodos',
+                country: 'us'
+            },
+            {
+                id: '2',
+                name: 'Red Hot Chili Peppers',
+                country: 'us'
+            },
+            {
+                id: '3',
+                name: 'Prodigy',
+                country: 'uk'
+            },
+        ];
     }
     return SampleLists;
 })();
@@ -32,13 +49,14 @@ var MyAppComponent = (function () {
         this.title = 'masa69';
         this.mes = message.get();
         this.lists = sampleLists.item;
+        this.lists2 = sampleLists.item2;
     }
     MyAppComponent = __decorate([
         angular2_1.Component({
             selector: 'my-app'
         }),
         angular2_1.View({
-            template: "\n\t\t<h1>{{ title }}</h1>\n\t\t<p>{{ mes }}</p>\n\t\t<ul>\n\t\t\t<li *ng-for=\"#list of lists\">{{ list }}</li>\n\t\t</ul>\n\t",
+            template: "\n\t\t<h1>{{ title }}</h1>\n\t\t<p>{{ mes }}</p>\n\t\t<h2>Item</h2>\n\t\t<ul>\n\t\t\t<li *ng-for=\"#list of lists\">{{ list }}</li>\n\t\t</ul>\n\t\t<h2>Item2</h2>\n\t\t<ul>\n\t\t\t<li *ng-for=\"#list of lists2\">\n\t\t\t\tid: {{ list.id }}, name: {{ list.name }}, type: {{ list.type }}\n\t\t\t</li>\n\t\t</ul>\n\t",
             directives: [angular2_1.NgFor]
         }), 
         __metadata('design:paramtypes', [Messages, SampleLists])

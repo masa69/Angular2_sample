@@ -20,11 +20,33 @@ class Messages
 class SampleLists
 {
 	// private first: string;
-	item: Array<string>;
+	item  : [string];
+	item2 : [{
+		id      : string,
+		name    : string,
+		country : string,
+	}];
 
 	constructor()
 	{
-		this.item = ['one', 'two', 'three', 'four', 'five'];
+		this.item  = ['GIN', 'Whiskey', 'Beer', 'Sake', 'Vodka'];
+		this.item2 = [
+			{
+				id      : '1',
+				name    : 'Dodos',
+				country : 'us'
+			},
+			{
+				id      : '2',
+				name    : 'Red Hot Chili Peppers',
+				country : 'us'
+			},
+			{
+				id      : '3',
+				name    : 'Prodigy',
+				country : 'uk'
+			},
+		];
 	}
 }
 
@@ -36,8 +58,15 @@ class SampleLists
 	template: `
 		<h1>{{ title }}</h1>
 		<p>{{ mes }}</p>
+		<h2>Item</h2>
 		<ul>
 			<li *ng-for="#list of lists">{{ list }}</li>
+		</ul>
+		<h2>Item2</h2>
+		<ul>
+			<li *ng-for="#list of lists2">
+				id: {{ list.id }}, name: {{ list.name }}, type: {{ list.type }}
+			</li>
 		</ul>
 	`,
 	directives: [NgFor]
@@ -46,15 +75,17 @@ class SampleLists
 // Component controller
 class MyAppComponent
 {
-	title : string;
-	mes   : string;
-	lists : Array<string>;
+	title  : string;
+	mes    : string;
+	lists  : [string];
+	lists2 : [{}];
 
 	constructor(message: Messages, sampleLists: SampleLists)
 	{
-		this.title = 'masa69';
-		this.mes   = message.get();
-		this.lists = sampleLists.item;
+		this.title  = 'masa69';
+		this.mes    = message.get();
+		this.lists  = sampleLists.item;
+		this.lists2 = sampleLists.item2;
 	}
 }
 
